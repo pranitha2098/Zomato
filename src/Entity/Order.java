@@ -5,7 +5,7 @@ import Enums.OrderStatus;
 import java.util.Arrays;
 
 public class Order {
-    private int orderID;
+    private static int orderID;
     private Food[] orderedFood;
     private OrderStatus orderStatus;
     private double totalCost;
@@ -13,7 +13,7 @@ public class Order {
     private int restaurantID;
 
     public Order( Food[] orderedFood, OrderStatus orderStatus, double totalCost, int customerID, int restaurantID) {
-        this.orderID = orderID;
+        this.orderID = 1;
         this.orderedFood = orderedFood;
         this.orderStatus = orderStatus;
         this.totalCost = totalCost;

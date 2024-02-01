@@ -17,8 +17,8 @@ public class Main {
         RestaurantImpl restaurant= new RestaurantImpl();
         restaurant.addFood(2,f);
         restaurant.removeFood(2,6 );
-
-
+        restaurant.listOfFood(2);
+        restaurant.listOfRestaurants();
         System.out.println(RestaurantDatabase.restaurantArray);
 
 

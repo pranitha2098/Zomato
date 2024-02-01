@@ -2,6 +2,9 @@ package Implementation;
 
 import Database.RestaurantDatabase;
 import Entity.Food;
+import Entity.Restaurant;
+
+import java.util.Arrays;
 
 public class RestaurantImpl {
 
@@ -61,5 +64,25 @@ public class RestaurantImpl {
                 return i;
         }
         return -1;
+    }
+    public void listOfFood(int restaurantID){
+        int position=findRestaurantByID(restaurantID);
+        Food[] food= RestaurantDatabase.restaurantArray[position].getFood();
+        System.out.println("The list of food from restaurant "+restaurantID+" is :");
+        for(int i=0;i<food.length;i++){
+            if(food[i]==null) {
+                break;
+            }
+           System.out.println(food[i].getFoodName());
+        }
+    }
+
+    public void listOfRestaurants(){
+        System.out.println("List of Restaurants: ");
+        for(int i=0;i<RestaurantDatabase.restaurantArray.length;i++){
+            if(RestaurantDatabase.restaurantArray[i]==null)
+                break;
+            System.out.println(RestaurantDatabase.restaurantArray[i].getRestaurantName()+" "+RestaurantDatabase.restaurantArray[i].getRestaurantAddress()+" "+Arrays.toString(RestaurantDatabase.restaurantArray[i].getRestaurantContact())+" "+RestaurantDatabase.restaurantArray[i].getRating());
+        }
     }
 }
